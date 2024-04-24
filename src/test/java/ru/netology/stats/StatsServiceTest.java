@@ -9,10 +9,10 @@ public class StatsServiceTest {
     public void shouldFindSum() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedSum = 180;
-        int actualSum = service.sumSales(sales);
+        long expectedSum = 180;
+        long actualSum = service.sumSales(sales);
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
@@ -21,10 +21,10 @@ public class StatsServiceTest {
     public void shouldFindAverage() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedAverage = 15;
-        int actualAverage = service.averageSales(sales);
+        long expectedAverage = 15;
+        long actualAverage = service.averageSales(sales);
 
         Assertions.assertEquals(expectedAverage, actualAverage);
     }
@@ -33,7 +33,7 @@ public class StatsServiceTest {
     public void shouldFindMaxMonthSale() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedMaxMonth = 8;
         int actualMaxMonth = service.maxSale(sales);
@@ -45,7 +45,7 @@ public class StatsServiceTest {
     public void shouldFindMinMonthSale() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedMinMonth = 9;
         int actualMinMonth = service.minSale(sales);
@@ -57,7 +57,7 @@ public class StatsServiceTest {
     public void shouldFindLowAverage() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedLowAverage = 5;
         int actualLowAverage = service.lowAverageSales(sales);
@@ -69,7 +69,7 @@ public class StatsServiceTest {
     public void shouldFindHighAverage() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedHighAverage = 5;
         int actualHighAverage = service.highAverageSales(sales);

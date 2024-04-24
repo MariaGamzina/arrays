@@ -2,24 +2,19 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public int sumSales(int[] sales) {
-        int sum = 0;
-        for (int i = 0; i < sales.length; i++) {
-            sum = sum + sales[i];
+    public long sumSales(long[] sales) {
+        long sum = 0;
+        for (long sale : sales) {
+            sum += sale;
         }
         return sum;
     }
 
-    public int averageSales(int[] sales) {
-        int sum = 0;
-        for (int i = 0; i < sales.length; i++) {
-            sum = sum + sales[i];
-        }
-        int average = sum / 12;
-        return average;
+    public long averageSales(long[] sales) {
+        return sumSales(sales) / sales.length;
     }
 
-    public int maxSale(int[] sales) {
+    public int maxSale(long[] sales) {
         int maxMonthSale = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] >= sales[maxMonthSale]) {
@@ -29,7 +24,7 @@ public class StatsService {
         return maxMonthSale + 1;
     }
 
-    public int minSale(int[] sales) {
+    public int minSale(long[] sales) {
         int minMonthSale = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] <= sales[minMonthSale]) {
@@ -39,33 +34,23 @@ public class StatsService {
         return minMonthSale + 1;
     }
 
-    public int lowAverageSales(int[] sales) {
+    public int lowAverageSales(long[] sales) {
 
-        int sum = 0;
-        for (int i = 0; i < sales.length; i++) {
-            sum = sum + sales[i];
-        }
-        int average = sum / 12;
-
+        long average = averageSales(sales);
         int count = 0;
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < average) {
+        for (long sale : sales) {
+            if (sale < average) {
                 count++;
             }
         }
         return count;
     }
 
-    public int highAverageSales(int[] sales) {
-        int sum = 0;
-        for (int i = 0; i < sales.length; i++) {
-            sum = sum + sales[i];
-        }
-        int average = sum / 12;
-
+    public int highAverageSales(long[] sales) {
+        long average = averageSales(sales);
         int count = 0;
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > average) {
+        for (long sale : sales) {
+            if (sale > average) {
                 count++;
             }
         }
